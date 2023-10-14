@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        //Куда компилируется наш билд
+        "outDir": "./build/",
+        //Указывает на переменные с не указанным типом (по умолчанию он становится Any)
+        "noImplicitAny": true,
+        //Поддержка стандарта кода на этапе разработки
+        "module": "ESNext",
+        //В какой код компилируется наш, для поддержки старых браузеров
+        "target": "es5",
+        //Позволяет писать конструкции из React
+        "jsx": "react",
+        //Позволяет ts лоадеру также обрабатывать и js файлы
+        "allowJs": true,
+        //Обычно всегда node, пока не уверен что это
+        "moduleResolution": "node",
+        //позволяет работать с пакетами в commonJS, как с обычными пакетами в обычном JS при помощи import и export
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+} 
