@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "baseUrl": ".",
         //Куда компилируется наш билд
         "outDir": "dist",
         //Указывает на переменные с не указанным типом (по умолчанию он становится Any)
@@ -18,7 +17,11 @@
         //позволяет работать с пакетами в commonJS, как с обычными пакетами в обычном JS при помощи import и export
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true // Попробуйте добавить эту настройку
+        "skipLibCheck": true, // Попробуйте добавить эту настройку
+        // "baseUrl": ".",
+        // "paths": {
+        //     "*": ["./src/*"]
+        // },
 
     },
     "ts-node": {
