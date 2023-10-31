@@ -1,5 +1,5 @@
 import hello from "./functions"
 
-console.log('this is a entry point file')
+console.log('this is a enasdtry point file')
 
-hello('Danila');
+console.log(hello('Danila'))

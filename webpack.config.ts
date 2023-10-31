@@ -1,33 +1,29 @@
-import path from 'path';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
+import { buildWebpackConfig } from './config/build/buildWebpackConfig';
+import { BuildPaths } from './config/build/types/types';
+import path from 'path';
+import { BuildEnv } from './config/build/types/types';
 
-const config: webpack.Configuration = {
-  mode: "development",
-  entry: path.resolve(__dirname, 'src', 'index.ts'),
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: '[name].[contenthash].js',
-    clean: true,
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
-    }),
-    new webpack.ProgressPlugin(),
-  ],
-};
+//передаём env переменные из package.json скрипта
+export default (env: BuildEnv) => {
+  //пути
+  const paths: BuildPaths = {
+    entry: path.resolve(__dirname, 'src', 'index.ts'),
+    build: path.resolve(__dirname, 'dist'),
+    html: path.resolve(__dirname, 'public', 'index.html'),
+  }
 
-export default config;
+  const mode = env.mode || 'production';
+  //isDev true | false
+  const isDev = mode === 'development';
+  const PORT = env.port || 3000;
+  console.log(PORT, mode + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+  // функция buildWebpack возвращает динамическую конфигурацию в зависимости от переданных ей параметров mode и paths 
+  const config: webpack.Configuration = buildWebpackConfig({
+    mode,
+    paths,
+    isDev,
+    port: PORT,
+  })
+  return config;
+}
