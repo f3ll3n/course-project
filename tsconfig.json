@@ -18,6 +18,8 @@
         //позволяет работать с пакетами в commonJS, как с обычными пакетами в обычном JS при помощи import и export
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "skipLibCheck": true // Попробуйте добавить эту настройку
+
     },
     "ts-node": {
         "compilerOptions": {

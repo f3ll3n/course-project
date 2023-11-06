@@ -13,11 +13,10 @@ export default (env: BuildEnv) => {
     html: path.resolve(__dirname, 'public', 'index.html'),
   }
 
-  const mode = env.mode || 'production';
+  const mode = env.mode || 'development';
   //isDev true | false
   const isDev = mode === 'development';
   const PORT = env.port || 3000;
-  console.log(PORT, mode + 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
   // функция buildWebpack возвращает динамическую конфигурацию в зависимости от переданных ей параметров mode и paths 
   const config: webpack.Configuration = buildWebpackConfig({
     mode,
