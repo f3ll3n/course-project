@@ -2,10 +2,10 @@ import React, { Suspense, useContext, useState } from 'react';
 import './styles/index.scss'
 import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { MainPageAsync } from '../pages/MainPage/MainPage.async';
-import { AboutPageAsync } from '../pages/AboutPage/About.async';
-import { useTheme } from './providers/ThemeProvider/lib/useTheme';
-import { classNames } from '../helpers/classNames/classNames';
+import { MainPageAsync } from 'pages/MainPage/MainPage.async';
+import { AboutPageAsync } from 'pages/AboutPage/About.async';
+import { classNames } from 'helpers/classNames/classNames';
+import { useTheme } from './providers/ThemeProvider';
 const App: React.FC = () => {
     const {theme, toggleTheme} = useTheme();
     return (
