@@ -1,32 +1,41 @@
 {
-    "compilerOptions": {
-        //Куда компилируется наш билд
-        "outDir": "dist",
-        //Указывает на переменные с не указанным типом (по умолчанию он становится Any)
-        "noImplicitAny": true,
-        //Поддержка стандарта кода на этапе разработки
-        "module": "ESNext",
-        //В какой код компилируется наш, для поддержки старых браузеров
-        "target": "es5",
-        //Позволяет писать конструкции из React
-        "jsx": "react-jsx",
-        //Позволяет ts лоадеру также обрабатывать и js файлы
-        "allowJs": true,
-        //Обычно всегда node, пока не уверен что это
-        "moduleResolution": "node",
-        //позволяет работать с пакетами в commonJS, как с обычными пакетами в обычном JS при помощи import и export
-        "esModuleInterop": true,
-        "allowSyntheticDefaultImports": true,
-        "skipLibCheck": true, // Попробуйте добавить эту настройку
-        // "baseUrl": ".",
-        // "paths": {
-        //     "*": ["./src/*"]
-        // },
-
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // Подсвечивает все места где не указан тип
+    // Однако это не означает, что теперь вовсе нельзя использовать any.
+    // Это означает лишь, что в подобных ситуация разработчик должен явно писать any,
+    "noImplicitAny": true,
+    "module": "ESNext",
+    // В какую спецификацию компилируем: для поддержки большинства браузеров
+    "target": "es5",
+    "jsx": "react-jsx",
+    // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
+    "allowJs": true,
+    "moduleResolution": "node",
+    // Для абсолютного импорта
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
     },
-    "ts-node": {
-        "compilerOptions": {
-            "module": "CommonJS"
-        }
+    // esModuleInterop позволяет работать с пакетами, которые используют
+    // common js как с обычными пакета с помощью import (require() module.export) = common js
+    // import Moment from 'moment';
+    // без флага esModuleInterop результат undefined
+    // console.log(Moment);
+    // c флагом результат [object Object]
+    // console.log(Moment);
+    "esModuleInterop": true,
+    // Если какая-либо библиотека не имеет default import,
+    // лоадеры вроде ts-loader или babel-loader автоматически создают их
+    // вместо такого импорта
+    // import * as React from 'react';
+    // можно писать такой
+    // import React from 'react';
+    "allowSyntheticDefaultImports": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
     }
-} 
+  }
+}
