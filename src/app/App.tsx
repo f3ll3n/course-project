@@ -1,24 +1,17 @@
-import React, { Suspense, useContext, useState } from 'react';
+import React from 'react';
 import './styles/index.scss'
-import { Route, Routes } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { MainPageAsync } from 'pages/MainPage/MainPage.async';
-import { AboutPageAsync } from 'pages/AboutPage/About.async';
-import { classNames } from 'helpers/classNames/classNames';
 import { useTheme } from './providers/ThemeProvider';
+import { classNames } from 'shared/classNames';
+import { AppRouter } from './providers/router';
 const App: React.FC = () => {
     const {theme, toggleTheme} = useTheme();
     return (
         <div className={classNames('app', {}, [theme])}>
-        <button onClick={toggleTheme}>Toggle</button>
-        <Link to={'/'}>Главная</Link>
-        <Link to={'/about'}>О нас</Link>
-            <Suspense fallback={<div>Loading...</div>}>
-                <Routes>
-                    <Route path={'/about'} element={<AboutPageAsync/>} />
-                    <Route path={'/'} element={<MainPageAsync/>}/>
-                </Routes>
-            </Suspense>
+            <button onClick={toggleTheme}>Toggle</button>
+            <Link to={'/'}>Главная</Link>
+            <Link to={'/about'}>О нас</Link>
+            <AppRouter />
         </div>
     )
 }
