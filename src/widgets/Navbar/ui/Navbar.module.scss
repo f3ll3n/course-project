@@ -3,10 +3,14 @@
     height: var(--navbar-height);
     background: var(--inverted-bg-color);
     display: flex;
+    gap: 12px;
     align-items: center;
     padding: 20px;
+    transition: .3s;
     
     .links{
+        display: flex;
+        gap: 12px;
         margin-left: auto;
     }
     .mainLink{

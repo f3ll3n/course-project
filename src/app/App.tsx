@@ -5,7 +5,7 @@ import { classNames } from 'shared/classNames';
 import { AppRouter } from './providers/router';
 import { Navbar } from 'widgets/Navbar';
 const App: React.FC = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();    
     return (
         <div className={classNames('app', {}, [theme])}>
             <Navbar />

@@ -1,0 +1,16 @@
+
+.rounded{
+    background-color: var(--inverted-color);
+    transition: .3s;
+    border: 2px solid #949494;
+    border-radius: 25%;
+    display: flex;
+    padding: 5px;
+    color: var(--color);
+    cursor: pointer;
+}
+.clear{
+    border: none;
+    outline: none;
+    background: none;
+}
