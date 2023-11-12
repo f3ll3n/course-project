@@ -1,31 +1,30 @@
-import type { FC } from 'react';
+import type {FC} from 'react';
 import cls from './ThemeSwitcher.module.scss';
-import { useTheme } from 'app/providers/ThemeProvider';
+import {useTheme} from 'app/providers/ThemeProvider';
 import {MdOutlineDarkMode} from 'react-icons/md';
-import {MdDarkMode} from 'react-icons/md'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { classNames } from 'shared/lib';
+import {MdDarkMode} from 'react-icons/md';
+import {Button, ButtonTheme} from 'shared/ui/Button/Button';
+import {classNames} from 'shared/lib';
 
 export enum ThemeSwitcherTheme {
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
+	PRIMARY = 'primary',
+	SECONDARY = 'secondary',
 }
 
-interface ThemeSwitcherProps {
-    className?: string;
-}
+type ThemeSwitcherProps = {
+	className?: string;
+};
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({className}: ThemeSwitcherProps) => {
-    const {theme, toggleTheme} = useTheme();
-    const icon = theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />;
-    return (
-        <Button 
-            onClick={toggleTheme} 
-            theme={ButtonTheme.CLEAR} 
-            className={classNames(cls.ThemeSwitcher, {}, [cls[theme], className])}
-        >
-            {theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />}
-        </Button>            
-    );
-}
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({className = ''}: ThemeSwitcherProps) => {
+	const {theme, toggleTheme} = useTheme();
+	return (
+		<Button
+			onClick={toggleTheme}
+			theme={ButtonTheme.CLEAR}
+			className={classNames(cls.ThemeSwitcher, {}, [cls[theme], className])}
+		>
+			{theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />}
+		</Button>
+	);
+};
 
