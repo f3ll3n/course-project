@@ -8,6 +8,11 @@
     padding: 20px;
     transition: .3s;
     
+    .logo{
+        color: var(--inverted-color);
+        text-decoration: underline;
+        font-weight: 600;
+    }
     .links{
         display: flex;
         gap: 12px;
