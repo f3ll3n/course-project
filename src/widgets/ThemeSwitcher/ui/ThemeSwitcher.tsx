@@ -19,8 +19,10 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({className}: ThemeSwitcher
     const {theme, toggleTheme} = useTheme();
     const icon = theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />;
     return (
-        // <button>s</button>
-        <Button onClick={toggleTheme} theme={ButtonTheme.CLEAR} className={classNames(cls.ThemeSwitcher, {}, [cls[theme], className])}
+        <Button 
+            onClick={toggleTheme} 
+            theme={ButtonTheme.CLEAR} 
+            className={classNames(cls.ThemeSwitcher, {}, [cls[theme], className])}
         >
             {theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />}
         </Button>            

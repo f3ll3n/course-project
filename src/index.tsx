@@ -5,7 +5,7 @@ import { ThemeProvider } from "./app/providers/ThemeProvider/ui/ThemeProvider";
 import "./shared/config/i18n/i18n";
 
 render (
-    <BrowserRouter>
+    <BrowserRouter> 
         <ThemeProvider>
             <App />
         </ThemeProvider>

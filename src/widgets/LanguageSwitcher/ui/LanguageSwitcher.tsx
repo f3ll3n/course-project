@@ -1,30 +1,26 @@
 import type { FC } from 'react';
 import cls from './LanguageSwitcher.module.scss';
-import { useTheme } from 'app/providers/ThemeProvider';
-import { MdOutlineDarkMode } from 'react-icons/md';
-import { MdDarkMode } from 'react-icons/md'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { classNames } from 'shared/lib';
-
-export enum LanguageSwitcherTheme {
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
-}
+import { useTranslation } from 'react-i18next';
 
 interface LanguageSwitcherProps {
     className?: string;
 }
 
 export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({className}: LanguageSwitcherProps) => {
-    const {theme, toggleTheme} = useTheme();
-    const icon = theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />;
+    const { t, i18n } = useTranslation();
+
+    const toggleLanguage = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ?  'en' : 'ru')
+    }
     return (
         <Button 
-            onClick={toggleTheme} 
+            onClick={toggleLanguage} 
             theme={ButtonTheme.CLEAR} 
-            className={classNames(cls.LanguageSwitcher, {}, [cls[theme], className])}
+            className={classNames(cls.LanguageSwitcher, {}, [className])}
         >
-            {theme === 'dark' ? <MdDarkMode /> : <MdOutlineDarkMode />}
+            {i18n.language}
         </Button>            
     );
 }

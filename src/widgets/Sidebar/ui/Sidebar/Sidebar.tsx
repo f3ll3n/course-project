@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib';
 import { Navbar } from 'widgets/Navbar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+import { LanguageSwitcher } from 'widgets/LanguageSwitcher/ui/LanguageSwitcher';
 interface SidebarProps {
     className?: 'string'
 }
@@ -20,6 +21,7 @@ export const Sidebar: FC<SidebarProps> = ({className}) => {
                 {collapsed ? '/   >' : '/  <'}
             </Button>
             <div className={cls.switchers}>
+                <LanguageSwitcher />
                 <ThemeSwitcher />
             </div>
         </div>

@@ -11,7 +11,7 @@ export const AppRouter = () => {
                   <div className='page-wrapper'>
                     {element}
                   </div>
-                  )} />
+                    )} />
             ))}
         </Routes>
     </Suspense>
