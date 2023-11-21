@@ -8,21 +8,23 @@ type LanguageSwitcherProps = {
 	className?: string;
 };
 
-export const LanguageSwitcher: FC<LanguageSwitcherProps> = ({className = ''}: LanguageSwitcherProps) => {
-	const {t, i18n} = useTranslation();
+export const LanguageSwitcher: FC<LanguageSwitcherProps> = (
+	{className = ''}: LanguageSwitcherProps
+	) => {
+	const {i18n} = useTranslation();
 
 	const toggleLanguage = () => {
 		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
 	};
 
 	return (
-		<Button
-			onClick={toggleLanguage}
-			theme={ButtonTheme.CLEAR}
-			className={classNames(cls.LanguageSwitcher, {}, [className])}
+    <Button
+        onClick={toggleLanguage}
+        theme={ButtonTheme.CLEAR}
+        className={classNames(cls.LanguageSwitcher, {}, [className])}
 		>
-			{i18n.language}
-		</Button>
+        {i18n.language}
+    </Button>
 	);
 };
 

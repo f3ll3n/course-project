@@ -1,4 +1,3 @@
-
 type Mods = Record<string, boolean | string>;
 // Очень круто написанный helper, прям чудотворный код, эстетически совершенный
 export function classNames(cls: string, mods: Mods = {}, additional: string[] = []): string {

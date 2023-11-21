@@ -8,23 +8,24 @@ type NavbarProps = {
 	className?: string;
 };
 
-export const Navbar: React.FC<NavbarProps> = ({className}) => {
+export const Navbar: React.FC<NavbarProps> = ({className = ''}) => {
+	
 	const {t} = useTranslation('navbar');
 
 	return (
-		<div className={classNames(cls.navbar, {}, [])}>
-			<div className={cls.logo}>
-				production-projec
-			</div>
+    <div className={classNames(cls.navbar, {}, [className])}>
+        <div className={cls.logo}>
+            production-projec
+        </div>
 
-			<div className={cls.links}>
-				<>
-					<AppLink to={'/'} theme={AppLinkTheme.PRIMARY}>{t('Главная')}</AppLink>
-					<AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>{t('О нас')}</AppLink>
-				</>
-			</div>
+        <div className={cls.links}>
+            <>
+                <AppLink to={'/'} theme={AppLinkTheme.PRIMARY}>{t('Главная')}</AppLink>
+                <AppLink to={'/about'} theme={AppLinkTheme.SECONDARY}>{t('О нас')}</AppLink>
+            </>
+        </div>
 
-		</div>
+    </div>
 	);
 };
 

@@ -16,15 +16,15 @@ export const Sidebar: FC<SidebarProps> = ({className = ''}) => {
 	};
 
 	return (
-		<div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
-			<Button onClick={onToggle} theme={ButtonTheme.SIMPLE}>
-				{collapsed ? '/   >' : '/  <'}
-			</Button>
-			<div className={cls.switchers}>
-				<LanguageSwitcher />
-				<ThemeSwitcher />
-			</div>
-		</div>
+    <div className={classNames(cls.Sidebar, {[cls.collapsed]: collapsed}, [className])}>
+        <Button onClick={onToggle} theme={ButtonTheme.SIMPLE}>
+            {collapsed ? '/   >' : '/  <'}
+        </Button>
+        <div className={cls.switchers}>
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+        </div>
+    </div>
 	);
 };
 

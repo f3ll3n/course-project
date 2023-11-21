@@ -4,7 +4,7 @@ import {useTranslation} from 'react-i18next';
 export const AboutPage: React.FC = () => {
 	const {t} = useTranslation('about');
 	return (
-		<div>{t('О нас')}</div>
+    <div>{t('О нас')}</div>
 	);
 };
 

@@ -10,8 +10,8 @@ export const ThemeProvider: FC = ({children}) => {
 		setTheme,
 	}), [theme]);
 	return (
-		<ThemeContext.Provider value={defaultProps}>
-			{children}
-		</ThemeContext.Provider>
+    <ThemeContext.Provider value={defaultProps}>
+        {children}
+    </ThemeContext.Provider>
 	);
 };
