@@ -1,3 +1,4 @@
+/* eslint-disable i18next/no-literal-string */
 import React from 'react';
 import cls from './Navbar.module.scss';
 import {AppLink} from 'shared/ui';
@@ -15,7 +16,7 @@ export const Navbar: React.FC<NavbarProps> = ({className = ''}) => {
 	return (
     <div className={classNames(cls.navbar, {}, [className])}>
         <div className={cls.logo}>
-            production-projec
+            {/* production-projec */}
         </div>
 
         <div className={cls.links}>

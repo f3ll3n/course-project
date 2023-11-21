@@ -3,5 +3,9 @@
         "public/locales",
         "src/shared/config/i18n"
     ],
-    "eslint.workingDirectories": []
+    "eslint.workingDirectories": [
+        
+    ],
+    "stylelint.config": null,
+    "stylelint.validate": ["css", "scss"],
 }

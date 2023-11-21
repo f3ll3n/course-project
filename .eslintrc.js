@@ -5,7 +5,7 @@ module.exports = {
 		es2021: true,
 		jest: true,
 	},
-	extends: ['plugin:react/recommended'],
+	extends: ['plugin:react/recommended', "plugin:i18next/recommended"],
 	overrides: [
 		{
 			files: ['**/src/**/*.test.{ts,tsx}'],
@@ -44,10 +44,7 @@ module.exports = {
         'react/no-deprecated': 'off',
 		// 'import/no-extraneous-dependencies': ['warn', { devDependencies: true }],
 		'no-underscore-dangle': 'off',
-		// 'i18next/no-literal-string': [
-		// 	'error',
-		// 	{ markupOnly: true, ignoreAttribute: ['data-testid', 'to'] },
-		// ],
+		'i18next/no-literal-string': ['error', {markupOnly: true}],
 		'max-len': ['error', { ignoreComments: true, code: 100 }],
 	},
 	globals: {

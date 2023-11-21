@@ -1,17 +1,18 @@
 .Button{
     cursor: pointer;
     color: var(--inverted-color);
-
 }
+
 .rounded{
     background-color: var(--inverted-color);
-    transition: .3s;
+    transition: 0.3s;
     border: 2px solid #949494;
     border-radius: 25%;
     display: flex;
     padding: 5px;
     cursor: pointer;
 }
+
 .clear{
     border: none;
     outline: none;
@@ -25,6 +26,7 @@
     width: 100%;
     padding: 5px;
 }
+
 .simple:hover{
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgb(0 0 0 / 10%);
 }
